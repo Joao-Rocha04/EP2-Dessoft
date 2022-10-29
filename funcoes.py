@@ -65,7 +65,7 @@ def sorteia_questao_inedida(dicionario,nivel,lista):
     return x
 def questao_para_texto(dicionario,n):
     x = f'''----------------------------------------
-QUESTAO {n}
+\33[1;35mQUESTAO {n}\33[m
 
 {dicionario['titulo']}
 
@@ -83,10 +83,10 @@ def gera_ajuda(dicionario):
     x = random.randint(1,2)
     if x == 1:
         z = random.choice(lista)
-        return f'DICA:\nOpções certamente erradas: {z}'
+        return f'\33[1;32mDICA:\nOpções certamente erradas: {z}\33[m'
     if x == 2:
         z = random.choice(lista)
         y = lista.index(z)
         del lista[y]
         a = random.choice(lista)
-        return f'DICA:\nOpções certamente erradas: {z} | {a}'
+        return f'\33[1;32mDICA:\nOpções certamente erradas: {z} | {a}\33[m'
