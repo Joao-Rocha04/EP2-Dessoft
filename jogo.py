@@ -1,6 +1,4 @@
 import funcoes
-import math
-import random
 import base_questoes
 jogo = True
 ajudas = 2
