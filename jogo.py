@@ -70,10 +70,7 @@ while jogo == True:
             print('Voce não possui mais pulos!')
             print(funcoes.questao_para_texto(questao_sorteada,questoes))
             resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-            while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
+            
             while resposta == 'pular':
                 print('Voce não possui mais pulos!')
                 print(funcoes.questao_para_texto(questao_sorteada,questoes))
@@ -95,10 +92,6 @@ while jogo == True:
                     ajudas = ajudas -1
                     print(funcoes.gera_ajuda(questao_sorteada))
                     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-                    while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                        print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
                     if resposta == questao_sorteada['correta']:
                         questoes_corretas +=1
                         questoes+=1
@@ -114,18 +107,11 @@ while jogo == True:
                     print('Você não possui mais ajudas!')
                     print(funcoes.questao_para_texto(questao_sorteada,questoes))
                     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
-                    while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                        print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
+                    
                     while resposta == 'ajuda':
                         print('Você não possui mais ajudas!')
                         print(funcoes.questao_para_texto(questao_sorteada,questoes))
                         resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
-                    while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                        print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
                     if resposta == questao_sorteada['correta']:
                         questoes_corretas +=1
                         questoes+=1
@@ -142,16 +128,8 @@ while jogo == True:
             ajudas = ajudas -1
             print(funcoes.gera_ajuda(questao_sorteada))
             resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-            while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
             while resposta == 'ajuda':
                 print('Você ja pediu ajuda nesta questão')
-                resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-            while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                print(funcoes.questao_para_texto(questao_sorteada,questoes))
                 resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
             if resposta == questao_sorteada['correta']:
                 questoes_corretas +=1
@@ -178,18 +156,10 @@ while jogo == True:
                     print('Voce não possui mais pulos!')
                     print(funcoes.questao_para_texto(questao_sorteada,questoes))
                     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-                    while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                        print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
                 while resposta == 'pular':
                     print('Voce não possui mais pulos!')
                     print(funcoes.questao_para_texto(questao_sorteada,questoes))
                     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-                    while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                        print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
                 if resposta == questao_sorteada['correta']:
                     questoes_corretas +=1
                     questoes+=1
@@ -201,19 +171,11 @@ while jogo == True:
         else: 
             print('Você não possui mais ajudas!')
             print(funcoes.questao_para_texto(questao_sorteada,questoes))
-            resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
-            while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')    
+            resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')       
             while resposta == 'ajuda':
                 print('Você não possui mais ajudas!')
                 print(funcoes.questao_para_texto(questao_sorteada,questoes))
                 resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
-                while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                        print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
             if resposta == questao_sorteada['correta']:
                 questoes_corretas +=1
                 questoes+=1
@@ -239,18 +201,10 @@ while jogo == True:
                     print('Voce não possui mais pulos!')
                     print(funcoes.questao_para_texto(questao_sorteada,questoes))
                     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-                    while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                        print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
                 while resposta == 'pular':
                     print('Voce não possui mais pulos!')
                     print(funcoes.questao_para_texto(questao_sorteada,questoes))
                     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-                    while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
-                        print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"')
-                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
                 if resposta == questao_sorteada['correta']:
                     questoes_corretas +=1
                     questoes+=1
