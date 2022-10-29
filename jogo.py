@@ -44,11 +44,12 @@ while jogo == True:
     questao_sorteada = funcoes.sorteia_questao_inedida(base_de_questoes_correta,nivel,questoes_ja_sorteadas)
     questoes_ja_sorteadas.append(questao_sorteada)
     print(funcoes.questao_para_texto(questao_sorteada,questoes))
-    resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
-    while resposta != 'A' or resposta != 'B' or resposta !="C" or resposta != 'D' or resposta != 'ajuda' or resposta != 'pular':
+    resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
+    while resposta != 'A' and resposta != 'B' and resposta !="C" and resposta != 'D' and resposta != 'ajuda' and resposta != 'pular':
         print('Escolha uma opção válida!')
         print(funcoes.questao_para_texto(questao_sorteada,questoes))
-        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
+       
     if resposta == questao_sorteada['correta']:
         questoes_corretas +=1
         print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
@@ -68,11 +69,13 @@ while jogo == True:
         else:
             print('Voce não possui mais pulos!')
             print(funcoes.questao_para_texto(questao_sorteada,questoes))
-            resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+            resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
+            
             while resposta == 'pular':
                 print('Voce não possui mais pulos!')
                 print(funcoes.questao_para_texto(questao_sorteada,questoes))
-                resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+                resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
+                
             if resposta == questao_sorteada['correta']:
                 questoes_corretas +=1
                 print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
@@ -86,7 +89,8 @@ while jogo == True:
             elif resposta == 'ajuda':
                 if ajudas > 0:
                     funcoes.gera_ajuda(questao_sorteada)
-                    resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+                    resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
+                    
                     if resposta == questao_sorteada['correta']:
                         questoes_corretas +=1
                         print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
@@ -101,6 +105,7 @@ while jogo == True:
                     print('Você não possui mais ajudas!')
                     print(funcoes.questao_para_texto(questao_sorteada,questoes))
                     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+                    
                     while resposta == 'ajuda':
                         print('Você não possui mais ajudas!')
                         print(funcoes.questao_para_texto(questao_sorteada,questoes))
