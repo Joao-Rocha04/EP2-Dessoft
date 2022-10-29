@@ -9,6 +9,7 @@ premio = 0
 questoes = 1
 questoes_corretas = 0
 lista_premios = [1000,5000,10000,30000,50000,100000,300000,500000,1000000]
+lista_possiveis_respostas = ['A','B','C','D']
 print('\33[1;33mBem vindo ao jogo da Fortuna! Aqui terá a oportunidade de enriquecer!!\33[m')
 nome_do_jogador = input('Qual seu nome?')
 print(f'\33[1;37mBem vindo {nome_do_jogador}, você tem direito a 3 pulos e 2 ajudas.')
@@ -45,11 +46,88 @@ while jogo == True:
     questao_sorteada = funcoes.sorteia_questao_inedida(base_de_questoes_correta,nivel,questoes_ja_sorteadas)
     questoes_ja_sorteadas.append(questao_sorteada)
     print(funcoes.questao_para_texto(questao_sorteada,questoes))
-    resposta = input('Qual sua resposta?')
+    resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+    while resposta != 'A' or resposta != 'B' or resposta !="C" or resposta != 'D' or resposta != 'ajuda' or resposta != 'pular':
+        print('Escolha uma opção válida!')
+        print(funcoes.questao_para_texto(questao_sorteada,questoes))
+        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
     if resposta == questao_sorteada['correta']:
         questoes_corretas +=1
         print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
         continuar = input('Deseja continuar? [sim/nao]')
         if continuar == 'nao':
             print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
-    
+            jogo = False
+    elif resposta == 'pular':
+        if pulos > 0:
+            questoes_corretas+=1
+            pulos = pulos-1
+            print(f'Agora Possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
+            continuar = input('Deseja continuar? [sim/nao]')
+            if continuar == 'nao':
+                print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
+                jogo = False
+        else:
+            print('Voce não possui mais pulos!')
+            print(funcoes.questao_para_texto(questao_sorteada,questoes))
+            resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+            while resposta == 'pular':
+                print('Voce não possui mais pulos!')
+                print(funcoes.questao_para_texto(questao_sorteada,questoes))
+                resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+            if resposta == questao_sorteada['correta']:
+                questoes_corretas +=1
+                print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
+                continuar = input('Deseja continuar? [sim/nao]')
+                if continuar == 'nao':
+                    print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
+                    jogo = False
+            elif resposta in lista_possiveis_respostas and resposta!= questao_sorteada['correta']:
+                print('Você errou! Que pena... mais sorte da proxima vez')
+                jogo = False
+            elif resposta == 'ajuda':
+                if ajudas > 0:
+                    funcoes.gera_ajuda(questao_sorteada)
+                    resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+                    if resposta == questao_sorteada['correta']:
+                        questoes_corretas +=1
+                        print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
+                        continuar = input('Deseja continuar? [sim/nao]')
+                        if continuar == 'nao':
+                            print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
+                            jogo = False
+                    else:
+                        print('Você errou! Que pena... mais sorte da proxima vez')
+                        jogo = False
+                else: 
+                    print('Você não possui mais ajudas!')
+                    print(funcoes.questao_para_texto(questao_sorteada,questoes))
+                    resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+                    while resposta == 'ajuda':
+                        print('Você não possui mais ajudas!')
+                        print(funcoes.questao_para_texto(questao_sorteada,questoes))
+                        resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
+                    if resposta == questao_sorteada['correta']:
+                        questoes_corretas +=1
+                        print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
+                        continuar = input('Deseja continuar? [sim/nao]')
+                        if continuar == 'nao':
+                            print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
+                            jogo = False
+                    else:
+                        print('Você errou! Que pena... mais sorte da proxima vez')
+                        jogo = False
+    elif resposta == 'ajuda':
+        funcoes.gera_ajuda(questao_sorteada)
+        if resposta == questao_sorteada['correta']:
+            questoes_corretas +=1
+            print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
+            continuar = input('Deseja continuar? [sim/nao]')
+            if continuar == 'nao':
+                print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
+        else:
+            print('Você errou! Que pena... mais sorte da proxima vez')
+            jogo = False
+    if resposta != 'A' or resposta != 'B' or resposta !="C" or resposta != 'D' or resposta != 'ajuda' or resposta != 'pular':
+        print('Escolha uma opção válida!')
+
