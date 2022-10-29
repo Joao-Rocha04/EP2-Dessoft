@@ -39,11 +39,11 @@ while jogo == True:
     lista_questoes_validas = []
     for i in range(0,len(lista_validadas)):
         if lista_validadas[i] == {}:
-            lista_questoes_validas.append(lista_validadas[i])
+            lista_questoes_validas.append(lista_para_validar[i])
     base_de_questoes_correta[nivel] = lista_questoes_validas
     questao_sorteada = funcoes.sorteia_questao_inedida(base_de_questoes_correta,nivel,questoes_ja_sorteadas)
     questoes_ja_sorteadas.append(questao_sorteada)
-    funcoes.questao_para_texto(questao_sorteada,questoes)
+    print(funcoes.questao_para_texto(questao_sorteada,questoes))
     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
     while resposta != 'A' or resposta != 'B' or resposta !="C" or resposta != 'D' or resposta != 'ajuda' or resposta != 'pular':
         print('Escolha uma opção válida!')
@@ -67,7 +67,7 @@ while jogo == True:
                 jogo = False
         else:
             print('Voce não possui mais pulos!')
-            funcoes.questao_para_texto(questao_sorteada,questoes)
+            print(funcoes.questao_para_texto(questao_sorteada,questoes))
             resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas')
             while resposta == 'pular':
                 print('Voce não possui mais pulos!')
