@@ -7,6 +7,8 @@ ajudas = 2
 pulos = 3
 premio = 0
 questoes = 1
+questoes_corretas = 0
+lista_premios = [1000,5000,10000,30000,50000,100000,300000,500000,1000000]
 print('\33[1;33mBem vindo ao jogo da Fortuna! Aqui terá a oportunidade de enriquecer!!\33[m')
 nome_do_jogador = input('Qual seu nome?')
 print(f'\33[1;37mBem vindo {nome_do_jogador}, você tem direito a 3 pulos e 2 ajudas.')
@@ -19,7 +21,7 @@ else:
     print('Tudo bem, até a proxima!')
 base_de_questoes = base_questoes.quest
 base_de_questoes_correta = funcoes.transforma_base(base_de_questoes)
-
+questoes_ja_sorteadas = []
 while jogo == True:
     if questoes <= 3:
         nivel = 'facil'
@@ -33,4 +35,21 @@ while jogo == True:
         print('Está indo bem, vamos aumentar o nível das questões agora!')
     if questoes == 7:
         print('Uau! Você é bom, mas agora chegam as questões difíceis!')
+    lista_para_validar = base_de_questoes_correta[nivel]
+    lista_validadas = funcoes.valida_questoes(lista_para_validar)
+    lista_questoes_validas = []
+    for i in range(0,len(lista_validadas)):
+        if lista_validadas[i] == {}:
+            lista_questoes_validas.append(lista_validadas[i])
+    base_de_questoes_correta[nivel] = lista_questoes_validas
+    questao_sorteada = funcoes.sorteia_questao_inedida(base_de_questoes_correta,nivel,questoes_ja_sorteadas)
+    questoes_ja_sorteadas.append(questao_sorteada)
+    print(funcoes.questao_para_texto(questao_sorteada,questoes))
+    resposta = input('Qual sua resposta?')
+    if resposta == questao_sorteada['correta']:
+        questoes_corretas +=1
+        print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
+        continuar = input('Deseja continuar? [sim/nao]')
+        if continuar == 'nao':
+            print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
     
