@@ -217,6 +217,9 @@ while jogo == True:
                 elif resposta in lista_possiveis_respostas and resposta!= questao_sorteada['correta']:
                     print('Você errou! Que pena... mais sorte da proxima vez')
                     jogo = False
+    elif resposta in lista_possiveis_respostas and resposta!= questao_sorteada['correta']:
+        print('Você errou! Que pena... mais sorte da proxima vez')
+        jogo = False
     if questoes == 9:
         print('Parabens!!!')
         print(f'Você ganhou o jogo da Fortuna e volta para a casa com um valor de R$: {lista_premios[questoes_corretas]:.2f}')
