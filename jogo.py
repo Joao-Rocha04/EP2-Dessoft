@@ -91,9 +91,9 @@ while jogo == True:
                 jogo = False
             elif resposta == 'ajuda':
                 if ajudas > 0:
+                    ajuda = ajuda -1
                     print(funcoes.gera_ajuda(questao_sorteada))
                     resposta = input(f'Qual sua resposta? Você possui {pulos} pulos e {ajudas} ajudas:')
-                    
                     if resposta == questao_sorteada['correta']:
                         questoes_corretas +=1
                         questoes+=1
