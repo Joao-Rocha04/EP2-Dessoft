@@ -3,7 +3,6 @@ import base_questoes
 jogo = True
 ajudas = 2
 pulos = 3
-premio = 0
 questoes = 1
 questoes_corretas = 0
 lista_premios = [1000,5000,10000,30000,50000,100000,300000,500000,1000000]
@@ -218,4 +217,8 @@ while jogo == True:
                 elif resposta in lista_possiveis_respostas and resposta!= questao_sorteada['correta']:
                     print('Você errou! Que pena... mais sorte da proxima vez')
                     jogo = False
-                    
+    if questoes == 9:
+        print('Parabens!!!')
+        print(f'Você ganhou o jogo da Fortuna e volta para a casa com um valor de R$: {lista_premios[questoes_corretas]:.2f}')
+        print('Muito Bem! Até a proxima')
+        jogo = False
