@@ -118,16 +118,14 @@ while jogo == True:
                         print('Você errou! Que pena... mais sorte da proxima vez')
                         jogo = False
     elif resposta == 'ajuda':
-        funcoes.gera_ajuda(questao_sorteada)
-        if resposta == questao_sorteada['correta']:
-            questoes_corretas +=1
-            print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
-            continuar = input('Deseja continuar? [sim/nao]')
-            if continuar == 'nao':
-                print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
-        else:
-            print('Você errou! Que pena... mais sorte da proxima vez')
-            jogo = False
-    if resposta != 'A' or resposta != 'B' or resposta !="C" or resposta != 'D' or resposta != 'ajuda' or resposta != 'pular':
-        print('Escolha uma opção válida!')
-
+        if ajudas > 0:
+            funcoes.gera_ajuda(questao_sorteada)
+            if resposta == questao_sorteada['correta']:
+                questoes_corretas +=1
+                print(f'Parabens! Você acertou! Já possui um premio de R$:{lista_premios[questoes_corretas]:.2f}')
+                continuar = input('Deseja continuar? [sim/nao]')
+                if continuar == 'nao':
+                    print(f'Parabens! Você saiu com um total de R$:{lista_premios[questoes_corretas]:.2f}')
+            else:
+                print('Você errou! Que pena... mais sorte da proxima vez')
+                jogo = False
