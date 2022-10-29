@@ -80,7 +80,6 @@ def gera_ajuda(dicionario):
     lista = [dicionario['opcoes']['A'],dicionario['opcoes']['B'],dicionario['opcoes']['C'],dicionario['opcoes']['D']]
     y = lista.index(dicionario['opcoes'][correta])
     del lista[y]
-    print(lista)
     x = random.randint(1,2)
     if x == 1:
         z = random.choice(lista)
