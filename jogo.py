@@ -104,7 +104,7 @@ while jogar_novamente == True:
                             y = False
                             jogo = False
                         elif resposta == 'parar':
-                            parar = input('Deseja mesmo parar [S/N] Se parar irá sairá com R$: {lista_premios[questoes_corretas]:.2f}')
+                            parar = input(f'Deseja mesmo parar [S/N] Se parar irá sairá com R$: {lista_premios[questoes_corretas]:.2f}')
                             if parar == 'S':
                                 x = False
                                 y = False
@@ -115,7 +115,7 @@ while jogar_novamente == True:
                     print('Não deu! Você não tem mais direito a ajuda')
                     y = True
             elif resposta == 'parar':
-                parar = input('Deseja mesmo parar [S/N] Se parar irá sairá com R$: {lista_premios[questoes_corretas]:.2f}')
+                parar = input(f'Deseja mesmo parar [S/N] Se parar irá sairá com R$: {lista_premios[questoes_corretas]:.2f}')
                 if parar == 'S':
                     y = False
                     jogo = False
@@ -126,7 +126,7 @@ while jogar_novamente == True:
                 y = False
                 jogo = False
     if questoes_corretas == 8:
-        print('Parabens ganhou')
+        print('PARABÉNS, você zerou o jogo e ganhou 1 milhão de reais!!!')
         quer_jogar_novamente = input('Deseja jogar novamente [S/N]?')
         if quer_jogar_novamente == 'S':
             jogar_novamente = True
