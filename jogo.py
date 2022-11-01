@@ -43,9 +43,9 @@ while jogar_novamente == True:
             print(funcoes.questao_para_texto(questao_sorteada,questoes))
             resposta = input(f'Qual sua resposta?')
             if resposta not in lista_todas_possiveis:
-                print('\33[1;31mOpção Inválida![m\n')
+                print('\33[1;31mOpção Inválida!\33[m\n')
                 print(f'\33[1;34mAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"\33[m\n')
-                resposta = input(f'Qual sua resposta?')
+                y = True
             elif resposta == questao_sorteada['correta']:
                 questoes+=1
                 questoes_corretas +=1
