@@ -57,11 +57,91 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'facil',
           'opcoes': {'A': 'Natação', 'B': 'Vôlei', 'C': 'Ski Cross Country', 'D': 'Futebol'},
           'correta': 'C'},
-         
+
+          {'titulo': 'Qual a raiz quadrada de 49?',
+          'nivel': 'facil',
+          'opcoes': {'A': '8','B': '7', 'C': '5', 'D': '6'},
+          'correta': 'B'},
+
+          {'titulo': 'Qual é o simbolo do Python?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Cobra','B': 'Cachorro', 'C': 'Gato', 'D': 'Urso'},
+          'correta': 'A'},
+
+          {'titulo': 'Quanto é 5x7?',
+          'nivel': 'facil',
+          'opcoes': {'A': '30','B': '25', 'C': '40', 'D': '35'},
+          'correta': 'D'},
+
+          {'titulo': 'Qual jogador de futebol tem mais bolas de ouro?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Cristiano Ronaldo','B': 'Pelé', 'C': 'Messi', 'D': 'Maradona'},
+          'correta': 'C'},
+
+          {'titulo': 'Quanto é 83 - 17',
+          'nivel': 'facil',
+          'opcoes': {'A': '65','B': '66', 'C': '70', 'D': '63'},
+          'correta': 'B'},
+
+          {'titulo': 'Qual é o esporte mais famoso no Brasil?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Võlei','B': 'Basquete', 'C': 'Natação', 'D': 'Futebol'},
+          'correta': 'D'},
+
+          {'titulo': 'Quanto vale 11x11',
+          'nivel': 'facil',
+          'opcoes': {'A': '121','B': '122', 'C': '111', 'D': '110'},
+          'correta': 'A'},
+
+          {'titulo': 'Qual a raiz de 25',
+          'nivel': 'facil',
+          'opcoes': {'A': '5','B': '4', 'C': '6', 'D': '4.5'},
+          'correta': 'A'},
+
+          {'titulo': 'Qual o aplicativo mais baixado de 2022?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Whatsapp','B': 'Tik-Tok', 'C': 'Free Fire', 'D': 'Netflix'},
+          'correta': 'B'},
+
+          {'titulo': 'Quanto é 3 + 2 x 7',
+          'nivel': 'facil',
+          'opcoes': {'A': '20','B': '17', 'C': '35', 'D': '22'},
+          'correta': 'B'},
+
+          {'titulo': 'Oque é push em portugues',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Empurrar','B': 'Puxar', 'C': 'Parar', 'D': 'Seguir'},
+          'correta': 'A'},
+  
          {'titulo': 'Qual o resultado da operação 5 + 2 * 3?',
           'nivel': 'medio',
           'opcoes': {'A': '21', 'B': '11', 'C': '30', 'D': '10'},
           'correta': 'B'},
+
+          {'titulo': 'Qual a plataforma de jogos mais famosa do mundo?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Epic Games', 'B': 'Rockstar', 'C': 'Steam', 'D': 'Batle.net'},
+          'correta': 'C'},
+
+          {'titulo': 'Quantos seguidores o Neymar possui no instagram?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Entre 90 e 100 Milhões', 'B': 'Entre 100 e 110 Milhões', 'C': 'Entre 130 e 140 Milhões', 'D': 'Mais de 180 Milhões'},
+          'correta': 'D'},
+
+          {'titulo': 'Quanto é 22x3',
+          'nivel': 'medio',
+          'opcoes': {'A': '65', 'B': '66', 'C': '70', 'D': '64'},
+          'correta': 'B'},
+
+          {'titulo': 'Qual destes não é um time de e-sports',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Cloud-9', 'B': 'Ence', 'C': 'Furia', 'D': 'John Games'},
+          'correta': 'D'},
+
+          {'titulo': 'Qual o jogo mais jogado de 2022?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Fortnite', 'B': 'CS-GO', 'C': 'League of Legends', 'D': 'Free Fire'},
+          'correta': 'A'},
 
          {'titulo': 'Qual destas é uma pseudociência que estuda os corpos celestes e as prováveis relações que possuem com a vida das pessoas e os acontecimentos na Terra?',
           'nivel': 'medio',
@@ -112,6 +192,26 @@ quest = [{'titulo': 'Qual o resultado da operação 57 + 32?',
           'nivel': 'dificil',
           'opcoes': {'A': 'Autogamia', 'B': 'Esporulação', 'C': 'Partenogênese', 'D': 'Divisão binária'},
           'correta': 'A'},
+
+          {'titulo': 'Quanto vale a raiz quadrada de 576?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '24', 'B': '22', 'C': '25', 'D': '23'},
+          'correta': 'A'},
+
+          {'titulo': 'Qual a função do rim?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Eliminar sódio', 'B': 'Eliminar potássio', 'C': 'Reter sódio', 'D': 'Reter potássio e sódio'},
+          'correta': 'C'},
+
+          {'titulo': 'Quem desses não é um jogador brasileiro de cs-go?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Fallen', 'B': 'Coldzera', 'C': 'Simple', 'D': 'Chello'},
+          'correta': 'C'},
+
+          {'titulo': 'Quantas células o corpo humano possui?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '100 trilhões', 'B': '5 trilhões', 'C': '700 bilhões', 'D': '10 trilhões'},
+          'correta': 'D'},
 
          {'titulo': 'Qual o resultado da operação 5 + 2 * 3 ^ 2, onde ^ representa potenciação?',
           'nivel': 'dificil',
