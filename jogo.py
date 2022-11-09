@@ -10,14 +10,26 @@ while jogar_novamente == True:
     lista_premios = [1000,5000,10000,30000,50000,100000,300000,500000,1000000]
     lista_possiveis_respostas = ['A','B','C','D']
     lista_todas_possiveis = ['A','B','C','D','pula','ajuda','parar']
-    print('\33[1;33mBem vindo ao jogo da Fortuna! Aqui terá a oportunidade de enriquecer!!\33[m\n')
-    nome_do_jogador = input('Qual seu nome?')
-    print(f'Bem vindo {nome_do_jogador}, você tem direito a 3 pulos e 2 ajudas.\n')
-    print(f'\33[1;34mAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"\33[m\n')
     base_de_questoes = base_questoes.quest
     base_de_questoes_correta = funcoes.transforma_base(base_de_questoes)
     questoes_ja_sorteadas = []
+    lista_nivel = ['facil','medio','dificil']
+    x = True
+    for nivel in lista_nivel:
+        lista_para_validar = base_de_questoes_correta[nivel]
+        lista_validadas = funcoes.valida_questoes(lista_para_validar)
+        for i in range(0,len(lista_validadas)):
+            if lista_validadas[i] != {}:
+                print(f'\33[1;31mErro na base de questoes!!!\33[m')
+                jogo = False
+                x = False
+    if x == True:
+        print('\33[1;33mBem vindo ao jogo da Fortuna! Aqui terá a oportunidade de enriquecer!!\33[m\n')
+        nome_do_jogador = input('Qual seu nome?')
+        print(f'Bem vindo {nome_do_jogador}, você tem direito a 3 pulos e 2 ajudas.\n')
+        print(f'\33[1;34mAs opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"\33[m\n')
     while jogo == True:
+        y = True
         if questoes <= 3:
             nivel = 'facil'
         elif 3 < questoes<= 6:
@@ -30,15 +42,8 @@ while jogar_novamente == True:
             print('\33[1;36mEstá indo bem, vamos aumentar o nível das questões para\33[m \33[1;33mmédio!\33[m\n')
         if questoes == 7:
             print('\33[1;36mUau! Você é bom, mas agora chegam as questões\33[m \33[1;31mdifíceis!\33[m\n')
-        lista_para_validar = base_de_questoes_correta[nivel]
-        lista_validadas = funcoes.valida_questoes(lista_para_validar)
-        lista_questoes_validas = []
-        for i in range(0,len(lista_validadas)):
-            if lista_validadas[i] == {}:
-                lista_questoes_validas.append(lista_para_validar[i])
-        base_de_questoes_correta[nivel] = lista_questoes_validas
         questao_sorteada = funcoes.sorteia_questao_inedida(base_de_questoes_correta,nivel,questoes_ja_sorteadas)
-        y = True
+        questoes_ja_sorteadas.append(questao_sorteada)
         while y == True:
             print(funcoes.questao_para_texto(questao_sorteada,questoes))
             resposta = input(f'Qual sua resposta?')
