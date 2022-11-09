@@ -51,7 +51,6 @@ while jogar_novamente == True:
                 questoes_corretas +=1
                 print(f'\33[1;32mVocê acertou! Seu premio agora é de R$: {lista_premios[questoes_corretas]:.2f}\33[m\n')
                 y = False
-                jogo = False
             elif resposta == 'pula':
                 if pulos > 0:
                     pulos = pulos - 1
